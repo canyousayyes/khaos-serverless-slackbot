@@ -1,0 +1,4 @@
+{
+  "project": "{{basename}}",
+  "slack-token": "{{slack-token}}"
+}

@@ -1,0 +1,53 @@
+{
+  "name": "{{basename}}",
+  "runtime": "babel",
+  "description": "Slackbot command for {{basename}}",
+  "customName": false,
+  "customRole": false,
+  "handler": "functions/{{basename}}/handler.handler",
+  "timeout": 3,
+  "memorySize": 128,
+  "authorizer": {},
+  "custom": {
+    "excludePatterns": []
+  },
+  "endpoints": [
+    {
+      "path": "slackbot/{{basename}}",
+      "method": "POST",
+      "type": "AWS",
+      "authorizationType": "none",
+      "authorizerFunction": false,
+      "apiKeyRequired": false,
+      "requestParameters": {},
+      "requestTemplates": {
+        "application/x-www-form-urlencoded": "{\"body\" : $input.json(\"$\")}"
+      },
+      "responses": {
+        "400": {
+          "statusCode": "400"
+        },
+        "default": {
+          "statusCode": "200",
+          "responseParameters": {},
+          "responseModels": {},
+          "responseTemplates": {
+            "application/json": ""
+          }
+        }
+      }
+    }
+  ],
+  "events": [],
+  "environment": {
+    "SERVERLESS_PROJECT": "{{basename}}",
+    "SERVERLESS_STAGE": "${stage}",
+    "SERVERLESS_REGION": "${region}",
+    "SLACK_VERIFICATION_TOKEN": "${slack-token}",
+    "LAMBDA_MAIN_FUNCTION_NAME": "{{basename}}-main"
+  },
+  "vpc": {
+    "securityGroupIds": [],
+    "subnetIds": []
+  }
+}
