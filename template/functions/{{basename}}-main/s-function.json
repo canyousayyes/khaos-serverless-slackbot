@@ -2,7 +2,7 @@
   "name": "{{basename}}-main",
   "runtime": "babel",
   "description": "Main function for {{basename}}",
-  "customName": false,
+  "customName": "{{basename}}-main",
   "customRole": false,
   "handler": "functions/{{basename}}-main/handler.handler",
   "timeout": 30,
