@@ -2,7 +2,7 @@
   "name": "{{basename}}",
   "version": "0.0.1",
   "description": "{{basename}}",
-  "author": "{{author",
+  "author": "{{author}}",
   "license": "MIT",
   "private": false,
   "scripts": {
