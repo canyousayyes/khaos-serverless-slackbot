@@ -38,5 +38,10 @@ npm run lint
 npm test
 ```
 
+## Notes
+Due to the nature of AWS Lambda, the command may have timeout after a fresh deployment, since extra time is needed to bring up the containers.
+
+Subsequent requests should be working though.
+
 ## Credit
 This template is based on https://github.com/localytics/serverless-slackbot-scaffold
